@@ -16,7 +16,7 @@ const init = () => {
 var uri = 'mongodb+srv://adhi:adhi_420@chatapp-1edgz.mongodb.net/test?retryWrites=true&w=majority'
 // connect to mongo host, set retry on initial fail
 const connectMongo = () => {
-  mongoose.connect(uri)
+  mongoose.connect(uri),{ useUnifiedTopology: true }
     .catch(err => {
       log.err('mongo', 'connection to db failed', err.message || err);
       setTimeout(connectMongo, 2000);
