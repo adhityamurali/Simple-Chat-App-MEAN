@@ -13,8 +13,9 @@ const server = http.createServer(app);
 connectMongo();
 io(server);
 
+const port = process.env.PORT || 8080
 // start server
-server.listen(config.server.port, err => {
+server.listen(port, err => {
   if (err) {
     log.err('server', 'could not start listening', err.message || err);
     process.exit();
