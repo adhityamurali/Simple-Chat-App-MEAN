@@ -13,7 +13,7 @@ const init = () => {
   mongoose.connection.on('error', err => log.err('mongo', 'error', err.message || err));
 };
 
-var uri = 'mongodb+srv://adhi:adhi_420@chatapp-1edgz.mongodb.net/test?retryWrites=true&w=majority'
+var uri = 'mongodb+srv://adhi:adhi_420@chatapp-1edgz.mongodb.net:27017/mean-chat-app?retryWrites=true&w=majority'
 // connect to mongo host, set retry on initial fail
 const connectMongo = () => {
   mongoose.connect(uri,{ useUnifiedTopology: true })
