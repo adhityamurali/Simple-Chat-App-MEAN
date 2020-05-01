@@ -13,7 +13,7 @@ const init = () => {
   mongoose.connection.on('error', err => log.err('mongo', 'error', err.message || err));
 };
 
-var uri = 'mongodb+srv://adhi:<password>@chatapp-1edgz.mongodb.net/test?retryWrites=true&w=majority'
+var uri = 'mongodb://adhi:<password>@chatapp-1edgz.mongodb.net/test?retryWrites=true&w=majority'
 // connect to mongo host, set retry on initial fail
 const connectMongo = () => {
   mongoose.connect(uri, config.mongo.options)
