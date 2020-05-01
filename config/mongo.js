@@ -13,10 +13,10 @@ const init = () => {
   mongoose.connection.on('error', err => log.err('mongo', 'error', err.message || err));
 };
 
-
+var uri = 'mongodb+srv://adhi:<password>@chatapp-1edgz.mongodb.net/test?retryWrites=true&w=majority'
 // connect to mongo host, set retry on initial fail
 const connectMongo = () => {
-  mongoose.connect(config.mongo.host, config.mongo.options)
+  mongoose.connect(uri, config.mongo.options)
     .catch(err => {
       log.err('mongo', 'connection to db failed', err.message || err);
       setTimeout(connectMongo, 2000);
