@@ -1,4 +1,3 @@
-![Preview](./preview/desktop-preview.png)
 
 # MEAN Chat App
 
